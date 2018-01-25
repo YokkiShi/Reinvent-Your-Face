@@ -1,0 +1,5 @@
+• Using the following AWS technologies: Lambda, API Gateway and DynamoDB.
+• Deploy the web game on API Gateway and Lambda by using Zappa.
+• Users can upload their own images and see the effect of combining different facial features of different people in their own face. 
+• Backend logic is implemented using Lambda functions. All application data are persistently stored on DynamoDB and S3.
+• Web interfaces are developed using html, css, javascript and bootstrap framework
