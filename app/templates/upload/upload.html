@@ -1,0 +1,54 @@
+{%extends "base.html"%}
+{%block content%}
+
+  <body>
+  <br>
+  <br>
+    <h1 class="text-center">uploadForm</h1>
+    <br>
+    <div align="center">
+        <p class=error>{{error_msg if error_msg!=None}}</p>
+    </div>
+    <br>
+     <form action="{{url_for('image_transform')}}"  enctype="multipart/form-data" method="post">
+         <div align="center">
+             <b>You Should Upload a File</b>
+             <input type="file" name="image_file" onchange="previewFile()" ><br>
+             <img src=""  alt="Image preview..." class="img-thumbnail">
+         </div>
+         <script>
+             function previewFile(){
+                var preview = document.querySelector('img');
+                var file = document.querySelector('input[type=file]').files[0];
+                var reader = new FileReader();
+
+                reader.onloadend = function(){
+                    preview.src = reader.result;
+                }
+
+                if(file){
+                    reader.readAsDataURL(file);
+                }else{
+                    preview.src="";
+                }
+             }
+
+         </script>
+         <br>
+
+        <div class="col-md-4 column">
+            <input type="submit" value="Send"class="btn btn-default btn-block btn-primary" >
+        </div>
+   	    <div class="col-md-3 column">
+	        <input type="reset" class="btn btn-default btn-block btn-info">
+        </div>
+
+     </form>
+  <div class="col-md-4 column">
+  <form action="{{url_for('index',username=username)}}" method="get">
+      <input type="submit" value="BACK TO MY PAGE" class="btn btn-default btn-block btn-primary">
+  </form>
+  </div>
+
+  </body>
+{% endblock%}

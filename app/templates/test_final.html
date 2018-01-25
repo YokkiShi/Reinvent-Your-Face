@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+
+    <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="data:image/x-icon;," rel="shortcut icon" type="image/x-icon">
+
+</head>
+<div style="background-image:url(/static/background.png)">
+<h1>{{title}}</h1>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#"> ECE1779_A1</a>
+    </div>
+    <div class="navbar-form navbar-right">
+        <button type="submit" class="btn btn-success">About This Work</button>
+    </div>
+</nav>
+
+    <br>
+    <br>
+    <br>
+    <h1> Hello <b>{{username}}</b></h1>
+    <br>
+    <div align="center"></div>
+    <p>You have submitted your picture successfully!!</p>
+    <br>
+    <p>You can back to your index page to see your transform</p>
+    </div>
+    <br>
+    <div>
+       <form action="{{url_for('index')}}" method="get">
+                <input type="submit" value="BACK TO HOMEPAGE" class="btn btn-default btn-block btn-primary">
+       </form>
+    </div>
+
+    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery-3.2.1.min.js')}}"></script>
+
+</body>
+</html>

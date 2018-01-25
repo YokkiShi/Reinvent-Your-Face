@@ -1,0 +1,40 @@
+{%extends "base.html"%}
+{%block content%}
+
+<div class="container text-center" >
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+
+
+                <form action=""  enctype="multipart/form-data" method="post">
+
+                    <br>
+                    <br>
+                    <p class=error>{{error_msg if error_msg!=None}}</p>
+                    <br>
+                    <label>Username</label>
+                    <input type="text" name="userID" value="{{userID if userID !=none}}">
+                    <br>
+                    <label>Password</label>
+                    <input type="password" name="password">
+                    <br>
+                    <br>
+
+
+                <input type="submit" value="LOGIN IN" class="btn btn-default btn-block btn-primary">
+            </form>
+
+            <br>
+
+            <form action="{{url_for('logout')}}" method="get">
+                <input type="submit" value="BACK TO HOMEPAGE" class="btn btn-default btn-block btn-primary">
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+{%endblock%}
